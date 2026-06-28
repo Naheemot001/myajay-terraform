@@ -6,6 +6,11 @@ terraform {
       version = "~>4.0"
     }
   }
+  backend "s3" {
+    bucket = "myajay-terraform-state"
+    region = "ca-central-1"
+    key    = "myajay-terraform.tfstate"
+  }
 }
 
 provider "aws" {
